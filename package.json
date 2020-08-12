@@ -1,0 +1,15 @@
+{
+  "name": "overprimelauncher",
+  "version": "1.0.6",
+  "description": "Tehbeardegamer's Overprime Launcher",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Tehbeardedgamer",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^9.2.0",
+    "pkg": "^4.4.9"
+  }
+}
