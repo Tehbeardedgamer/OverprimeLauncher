@@ -2,14 +2,26 @@
   "name": "overprimelauncher",
   "version": "1.0.6",
   "description": "Tehbeardegamer's Overprime Launcher",
-  "main": "main.js",
+  "main": "./src/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron ./src/main.js -w",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "author": "Tehbeardedgamer",
   "license": "MIT",
   "dependencies": {
-    "electron": "^9.2.0",
+    "jquery": "^3.5.1",
     "pkg": "^4.4.9"
+  },
+  "devDependencies": {
+    "electron-builder": "^22.8.0"
+  },
+  "build": {
+    "appId": "net.overprime.launcher ",
+    "productName": "Overprime Launcher",
+    "win": {
+      "target": "NSIS"
+    }
   }
 }

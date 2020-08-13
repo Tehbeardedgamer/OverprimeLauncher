@@ -5,7 +5,6 @@ let totalSize = 0;
 let totalReceived = 0;
 
 function downloadFile(file_url, targetPath) {
-  let received_bytes = 0;
   let total_bytes = 0;
 
   let req = request({
@@ -21,7 +20,6 @@ function downloadFile(file_url, targetPath) {
   });
 
   req.on("data", function (chunk) {
-    received_bytes += chunk.length;
     totalReceived += chunk.length;
 
     showProgress(totalReceived, totalSize);
@@ -36,13 +34,14 @@ function downloadFile(file_url, targetPath) {
 function showProgress(received, total) {
   let percentage = (received * 100) / total;
   console.log(
-    Math.ceil(percentage * 100) / 100 +
+    parseInt(percentage * 100) / 100 +
       "% | " +
       received +
       "bytes out of" +
       total +
       "bytes"
   );
+  return percentage;
 }
 
 let fileURL = [
@@ -91,14 +90,18 @@ let fileURL = [
   },
 ];
 
-for (let i = 0; i < fileURL.length; i++) {
-  let filename = getFilenameFromUrl(fileURL[i].url);
-  let downloadsFolder = "C:\\Users\\Sdwen\\Downloads";
-  let finalPath = downloadsFolder + "\\" + filename;
+const iniDownloadFile = () => {
+  for (let i = 0; i < fileURL.length; i++) {
+    let filename = getFilenameFromUrl(fileURL[i].url);
+    let downloadsFolder = "C:\\Users\\Sdwen\\Downloads";
+    let finalPath = downloadsFolder + "\\" + filename;
 
-  downloadFile(fileURL[i].url, finalPath);
-}
+    downloadFile(fileURL[i].url, finalPath);
+  }
+};
 
 function getFilenameFromUrl(url) {
   return url.substring(url.lastIndexOf("/") + 1);
 }
+
+module.exports = { iniDownloadFile, showProgress };
