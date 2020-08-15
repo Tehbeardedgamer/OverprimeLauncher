@@ -1,5 +1,5 @@
 # OverprimeLauncher
-	>This launcher is made by Tehbeardedgamer and is in no way associated with the Developers of Overprime.  I am not being paid for creating this I am paying for it out of my own 	pocket which I am happy to do for the time being. 
+	>This launcher is made by Tehbeardedgamer and is in no way associated with the Developers of Overprime.  I am not being paid for creating this I am paying for it out of my own pocket which I am happy to do for the time being. 
 	
 	>This launcher is made with JS and is made with in Electrion as a web application similar to discord.
 	
