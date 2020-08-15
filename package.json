@@ -18,6 +18,9 @@
     "electron-builder": "^22.8.0"
   },
   "build": {
+    "directories": {
+      "output": "release/"
+    },
     "appId": "net.overprime.launcher ",
     "productName": "Overprime Launcher",
     "win": {

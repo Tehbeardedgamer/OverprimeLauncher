@@ -1,0 +1,14 @@
+// TO DO - In no particular order.
+
+1. add update functionality to the app. - hard
+
+2. add links to header that open new windows not constrained by app  window size. - medium  // DONE
+
+3. add data feeds to main content window. - medium 
+
+4. add additional css style for a more dynamic look. - medium 
+
+5. Redo FS and Download capabilities.  - FUTURE functionality
+
+6. look at better way to compress / decompress and install files for faster completion. - FUTURE functionality
+

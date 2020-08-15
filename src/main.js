@@ -11,6 +11,7 @@ const execFile = require("child_process").execFile;
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
+const { send } = require("process");
 
 let mainWindow;
 let isInstalled = false;
@@ -24,13 +25,14 @@ function createWindow() {
     width: 1280,
     height: 800,
     frame: false,
+
     webPreferences: {
-      nodeIntegration: true,
+       nodeIntegration: true,
     },
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile("./renderer/index.html");
+  mainWindow.loadFile(path.join(__dirname, "/renderer/index.html"));
 
   // Open the DevTools.
   //mainWindow.webContents.openDevTools();
@@ -113,3 +115,23 @@ ipcMain.on("play", () => {
     });
   }
 });
+
+// Listen on the event 'openMyTwitchThingAndPleaseRenameMe'
+
+ipcMain.on('openExternalLink', (event, link)=>{
+  require('electron').shell.openExternal(link);
+}); // fucking neat for sure
+
+
+
+//   // Here we are logging the entire array
+//   console.log(link);
+//   // Alright so now in index.js, change it to your twitch link
+//   // Oh easy, ready?
+//   // Cya in index.js
+  
+//   // So what we are doing, is we are sending a "message" on "openExternalLink", and we are attaching an argument, being "https://lvk.sh/yes"
+//   // This means we can send data from the renderer to the main
+//   // Because in this case we are sending "https://lvk.sh/yes" from render to the main (see line 109 index.js)
+//   require('electron').shell.openExternal(link);
+// }); // but lets stick with this for now, -> off to index.js we go

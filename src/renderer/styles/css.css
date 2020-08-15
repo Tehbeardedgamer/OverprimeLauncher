@@ -69,7 +69,7 @@ a {
   display: flex;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("../../img/logo_bg.png");
+  background-image: url("../../img/Pepeprime.png");
 
   grid-row: 2/4;
   grid-column: 1/3;
@@ -485,4 +485,13 @@ h1 {
 
 h1 b {
   font-weight: 100;
+}
+
+.btn {
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn a:hover {
+  border-bottom: 2px solid #353535;
 }

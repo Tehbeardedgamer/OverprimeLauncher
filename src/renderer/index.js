@@ -92,3 +92,52 @@ ipcRenderer.on("install-complete", function (event) {
 ipcRenderer.on("window-loaded", function (event, isInstalled) {
   setButtonText(isInstalled ? buttonText.PLAY : buttonText.DOWNLOAD);
 });
+
+
+
+
+// Add a specific class to your element that you want clickable, (just so we know what it is)
+// querySelector that specific class
+// Attach an event listener
+// Make sure you have access to the event variable (add it to your arguments)
+// Prevent the default action
+// And pass a message over ipc to the main.js file,
+
+
+/**
+ * attachLink(selector, link)
+ * @param {string} selector The CSS Selector for the element to be clicked
+ * @param {string} link The url that should be opened when the click is triggered
+ */
+function attachLink(selector, link) {
+  document.querySelector(selector).addEventListener('click', (event) => {
+    event.preventDefault();
+    ipcRenderer.send('openExternalLink', link);
+  });
+}
+
+
+// Just added a bit of documentation dont mind me
+
+// Tada, made the code a little cleaner
+attachLink('.discord', 'https://discord.gg/fmWtanS');
+attachLink('.paypalBtn', 'https://www.paypal.com/paypalme/Tehbeardedgamer');
+attachLink('.twitchBtn', 'https://twitch.tv/tehbeardedgamer');
+attachLink('.learn', 'http://www.overprime.net');
+
+
+
+
+
+
+
+// document.querySelectorAll('.twitchBtn').forEach((element) => {
+//   element.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     ipcRenderer.send('openExternalLink', 'https://twitch.tv/tehbeardedgamer');
+//   });
+// });
+
+// Alright so now here is your challenge, attempt to add a new thing, to a button with another class
+
+console.log('If there is something in the next line it is JQUERY', $);

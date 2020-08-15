@@ -11,8 +11,7 @@ class Downloader {
 
     if (!fs.existsSync(tempDownloadDir)) {
       fs.mkdirSync(tempDownloadDir, { recursive: true });
-      //why would they not be?
-      //you download them, then install the game using them and then you dont need them anymore
+      
     }
 
     this.fileURLs = [
