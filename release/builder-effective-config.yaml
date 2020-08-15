@@ -1,8 +1,0 @@
-directories:
-  output: release/
-  buildResources: build
-appId: 'net.overprime.launcher '
-productName: Overprime Launcher
-win:
-  target: NSIS
-electronVersion: 9.2.0

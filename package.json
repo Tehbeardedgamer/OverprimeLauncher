@@ -19,7 +19,7 @@
   },
   "build": {
     "directories": {
-      "output": "release/"
+      "output": "C:/Users/Sdwen/Documents/release/"
     },
     "appId": "net.overprime.launcher ",
     "productName": "Overprime Launcher",
