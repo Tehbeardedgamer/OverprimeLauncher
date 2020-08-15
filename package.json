@@ -1,23 +1,33 @@
 {
   "name": "overprimelauncher",
-  "version": "1.0.6",
+  "version": "1.0.11",
   "description": "Tehbeardegamer's Overprime Launcher",
   "main": "./src/main.js",
   "scripts": {
+    "publish": "electron-builder  --win -p always",
     "start": "electron ./src/main.js -w",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
   "author": "Tehbeardedgamer",
-  "license": "MIT",
+  "license": "GNU AGPLv3",
   "dependencies": {
+    "electron-updater": "^4.3.4",
     "jquery": "^3.5.1",
     "pkg": "^4.4.9"
   },
   "devDependencies": {
+    "electron": "^9.2.0",
     "electron-builder": "^22.8.0"
   },
   "build": {
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Tehbeardedgamer",
+        "repo": "OverprimeLauncher"
+      }
+    ],
     "directories": {
       "output": "C:/Users/Sdwen/Documents/release/"
     },
