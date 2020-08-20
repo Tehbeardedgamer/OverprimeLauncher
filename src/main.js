@@ -10,9 +10,9 @@ const { checkIfInstalled, deleteTempDir } = require("./main/utils.js");
 const execFile = require("child_process").execFile;
 const fs = require("fs");
 const path = require("path");
-const os = require("os");
+
 const { send } = require("process");
-const {autoUpdater} = require("electron-updater");
+const { autoUpdater } = require("electron-updater");
 
 let mainWindow;
 let isInstalled = false;
@@ -20,7 +20,7 @@ let isInstalled = false;
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    openDevTools: false,
+    openDevTools: true,
     transparent: false,
     resizable: false,
     width: 1280,
@@ -28,7 +28,7 @@ function createWindow() {
     frame: false,
 
     webPreferences: {
-       nodeIntegration: true,
+      nodeIntegration: true,
     },
   });
 
@@ -47,7 +47,6 @@ app.whenReady().then(() => {
   autoUpdater.checkForUpdatesAndNotify();
   createWindow();
 });
-
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
@@ -119,22 +118,15 @@ ipcMain.on("play", () => {
   }
 });
 
-// Listen on the event 'openMyTwitchThingAndPleaseRenameMe'
-
-ipcMain.on('openExternalLink', (event, link)=>{
-  require('electron').shell.openExternal(link);
+ipcMain.on("openExternalLink", (event, link) => {
+  require("electron").shell.openExternal(link);
 }); // fucking neat for sure
-
-
 
 //   // Here we are logging the entire array
 //   console.log(link);
-//   // Alright so now in index.js, change it to your twitch link
-//   // Oh easy, ready?
-//   // Cya in index.js
-  
-//   // So what we are doing, is we are sending a "message" on "openExternalLink", and we are attaching an argument, being "https://lvk.sh/yes"
+
+//   // So what we are doing, is we are sending a "message" on "openExternalLink", and we are attaching an argument,
 //   // This means we can send data from the renderer to the main
-//   // Because in this case we are sending "https://lvk.sh/yes" from render to the main (see line 109 index.js)
+//   // Because in this case we are sending "https://null" from render to the main (see line 109 index.js)
 //   require('electron').shell.openExternal(link);
-// }); // but lets stick with this for now, -> off to index.js we go
+// });

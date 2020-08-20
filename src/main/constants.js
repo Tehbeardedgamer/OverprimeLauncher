@@ -1,9 +1,8 @@
-const fs = require("fs");
 const path = require("path");
-const os = require("os");
 
+const filePath = require("../renderer/index.js");
 // The games installation dir
-const installationDir = "C:\\Program Files (x86)\\Overprime";
+const installationDir = filePath;
 
 // The games .exe dir
 const exeDir = path.join(
@@ -12,9 +11,9 @@ const exeDir = path.join(
 );
 
 // The dir where the downloaded files get saved
-const tempDownloadDir = path.join(os.tmpdir() /* , "Overprime-download" */);
+const tempDownloadDir = filePath;
 
 // The downloaded installer dir
-const installerDir = path.join(tempDownloadDir, "Overprime_Installer.exe");
+const installerDir = path.join(tempDownloadDir, "OP_Compiled.exe");
 
 module.exports = { installationDir, exeDir, tempDownloadDir, installerDir };

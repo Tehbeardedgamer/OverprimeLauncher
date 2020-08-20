@@ -3,109 +3,152 @@
 
 
 <head>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/css.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pepeprime Launcher</title>
-    <style>
 
-    </style>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/normalize.css">
+<link rel="stylesheet" href="styles/css.css">
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pepeprime Launcher</title>
+<style>
+
+</style>
 </head>
 
 <body class="body">
-    <div class="wrapper">
-        <div style="-webkit-app-region: drag" class='header'>
+<div class="wrapper">
+<div style="-webkit-app-region: drag" class='header'>
 
-            <div style="-webkit-app-region: no-drag" class="nav">
-                <ul>
-                    <li  class="discord btn"><a>DISCORD</a></li>
-                    <li class="shop "><a>SHOP</a></li>
-                    <li class="learn btn"><a>LEARN</a></li>
-                </ul>
-            </div>
-            <div class="toolbar">
-                <button id="minimizeBtn" style="-webkit-app-region: no-drag" class="toolbarBtn"
-                    onclick='windowMinimize()'>-</button>
-                <button id="closeBtn" style="-webkit-app-region: no-drag" class="toolbarBtn"
-                    onclick='windowClose()'>X</button>
-            </div>
-        </div>
-        <div class='sidebar'>
-            <div id='logoname'>PEPEPRIME</div>
+<nav style="-webkit-app-region: no-drag" class="nav">
+<ul>
+<li  class="discord btn"><a>DISCORD</a></li>
+<li class="shop "><a>SHOP</a></li>
+<li class="learn btn"><a>LEARN</a></li>
+</ul>
+</nav>
+<div class="toolbar">
+<button id="minimizeBtn" style="-webkit-app-region: no-drag" class="toolbarBtn"
+onclick='windowMinimize()'>-</button>
+<button id="closeBtn" style="-webkit-app-region: no-drag" class="toolbarBtn"
+onclick='windowClose()'>X</button>
+</div>
+</div>
+<div class='sidebar'>
+<div id='logoname'>PEPEPRIME</div>
 
-        </div>
-        <div class='main'>
-            <div class="content">
-                <div class="top"></div>
-                <div class='scrollinginfo'>
-                    <div class="contentone">
-                        This launcher was made by <a target="_blank"
-                            href='https://twitch.tv/tehbeardedgamer' class="twitchBtn">Tehbeardedgamer</a>. I do
-                        not own any IP in relation to OVERPRIME or
-                        SoulEve. This is simply a launcher created to help the community gain access to the game. Each
-                        download I pay for out of my own pocket as I am hosting this on AWS s3 servers.
-                        <div class="divider"></div>
-                        If you would like to support my development of this project you can donate to me <a
-                             class="paypalBtn"> HERE</a> <!-- So we are adding a second class (classes are seperated by spaces) and the "btn" class I added at the bottom of "css.css"-->
-                        <div class="divider"></div>
-                        Please note any donations do not go to OVERPRIME or SOULEVE they are supporting Me as a creator
-                        for my time and cost investment in the project.
-                        <div class="divider"></div>
-                        I will be continually adding new features to this as I learn new things. Please send me any
-                        suggestions or feedback.
+</div>
+<div class='main'>
+<div class="content">
+<div class="top"></div>
+<div class='scrollinginfo'>
+<div class="contentone">
+
+<div class="update-head"> <h1>** INFO **</h1>
+<h2> <a href="https://www.paypal.com/paypalme/tehbeardedgamer"
+class="paypalBtn"> SUPPORT | DONATE</a></h2></div>
+<p>Developed and Funded by <a target="_blank"
+href='https://twitch.tv/tehbeardedgamer' class="twitchBtn">Tehbeardedgamer.</a></p>
 
 
 
-                    </div>
-                    <div class="contenttwo">
+<style>
+table, th, td {
 
-                        ** COMING SOON **
-                        <h1>Change Log - Version 0.1.0a</h1>
-                        Region currently does NOT do anything for you as a user. This is intended funcionality in the
-                        future if it becomes avaliable.
+border: 1px solid#f4f4f4;
+}
+</style>
+<table>
 
-                        There will be new features in these boxes in the future I have not decided on what to showcase
-                        yet, but it will be related to Overprime information.
+<th>Days:37</th>
+<th>Hours:400++</th>
+<th>Cost:$500++</th>
+<tr>                       
+<th>Language</th>
+<th>Files</th>
+<th>Lines of Code</th></tr>
+
+</tr><th>JSON</th><th>33</th><th>28824</th>
+<tr>
+</tr><th>JavaScript</th><th>86</th><th>3556</th>
+<tr>
+</tr><th>CSS</th><th>13</th><th>1966</th>
+<tr>
+</tr><th>HTML</th><th>21</th><th>699</th>
+<tr>
+</tr><th>PUG</th><th>11</th><th>265</th>
+<tr>
+</tr> <th>MD</th><th>7</th><th>86</th>
+<tr>
+</tr><th>TOTAL</th><th>171</th><th>35396</th>
 
 
-                    </div>
-                </div>
-                <div class="bottom"></div>
-            </div>
 
-        </div>
-        <div class=' footer'>
-            <div class='region'>REGION
-                <div class="custom-select" style="width: 200px;">
-                    <select disabled>
-                        <option value="no">Region</option>
-                        <option value="NA">North America</option>
-                        <option value="EU">Europe</option>
-                        <option value="SEA">SE Asia</option>
-                    </select>
-                </div>
-            </div>
-            <div class='download'>
-                <button id='downloadBtn' onclick=""></button>
 
-            </div>
-            <div class="progress">
-                <b class="progress__bar">
-                    <span class="progress__text">
-                        Progress:<em>0%</em>
-                    </span>
-                </b>
-            </div>
-            <div class='info'>Version 1.0.11</div>
-        </div>
+
+
+
+
+
+</table>
+<p>    
+<br><br>
+
+Tehbeardedgamer is not affiliated with SoulEve or Overprime. Any Support goes directly to Tehbeardedgamer to fund Development. </p>
+
+
+
+
+</div>
+<div class="contenttwo">
+<div class="update-head"> <h1>** UPDATES **</h1>
+<h2> Version 1.0.15</h2></div>
+
+<p>Renabled Download Capabilities.<br><br>
+Added support to allow users to select download and install location.<br><br>
+Added Donation link to help support development.<br><br>
+Built Self hosted server for App and FS Management.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="bottom"></div>
+</div>
+
+</div>
+<div class=' footer'>
+<div class='region'>REGION
+<div class="custom-select" style="width: 200px;">
+<select disabled>
+<option value="no">Region</option>
+<option value="NA">North America</option>
+<option value="EU">Europe</option>
+<option value="SEA">SE Asia</option>
+</select>
+</div>
+</div>
+<div class='download'>
+<button id='downloadBtn' onclick=""></button>
+
+</div>
+<div class="progress">
+<b class="progress__bar">
+<span class="progress__text">
+Progress:<em>0%</em>
+</span>
+</b>
+</div>
+<div class='info'>Version 1.0.15</div>
+</div>
 </body>
 
 <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
-<script src='jquery.js'></script> <!-- Fixed it! ~Luc (sorry for messing w it btw) -->
+<script src='jquery.js'></script> 
 <script type="module" src='style.js'></script>
 <script type="module" src="index.js">/*  require('./index.js') */</script>
 

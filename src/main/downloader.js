@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const os = require("os");
 const { tempDownloadDir } = require("./constants");
+const { resolve } = require("path");
 
 class Downloader {
   constructor() {
@@ -11,24 +12,46 @@ class Downloader {
 
     if (!fs.existsSync(tempDownloadDir)) {
       fs.mkdirSync(tempDownloadDir, { recursive: true });
-      
     }
 
     this.fileURLs = [
-      "https://oprimebkt.s3.us-east-2.amazonaws.com/Overprime_Installer.exe",
-      "https://oprimebkt.s3.us-east-2.amazonaws.com/Overprime_Installer-1.bin",
-      "https://oprimebkt.s3.us-east-2.amazonaws.com/Overprime_Installer-2.bin",
-      "https://oprimebkt.s3.us-east-2.amazonaws.com/Overprime_Installer-3.bin",
-      "https://oprimebkt.s3.us-east-2.amazonaws.com/Overprime_Installer-4.bin",
-      "https://oprimebkt.s3.us-east-2.amazonaws.com/Overprime_Installer-5.bin",
-      "https://oprimebkt.s3.us-east-2.amazonaws.com/Overprime_Installer-6.bin",
-      "https://oprimebkt.s3.us-east-2.amazonaws.com/Overprime_Installer-7.bin",
-      "https://oprimebkt.s3.us-east-2.amazonaws.com/Overprime_Installer-8.bin",
-      "https://oprimebkt.s3.us-east-2.amazonaws.com/Overprime_Installer-9.bin",
-      "https://oprimebkt.s3.us-east-2.amazonaws.com/Overprime_Installer-10.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled.exe",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-1.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-2.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-3.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-4.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-5.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-6.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-7.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-8.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-9.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-10.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-11.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-12.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-13.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-14.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-15.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-16.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-17.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-18.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-19.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-20.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-21.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-22.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-23.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-24.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-25.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-26.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-27.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-28.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-29.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-30.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-31.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-32.bin",
+      "http://CDN.tehbeardedgamer.tv/OP_Compiled-33.bin",
     ];
   }
-
+  // this is a comment
   downloadFiles() {
     return new Promise((resolve) => {
       for (let i = 0; i < this.fileURLs.length; i++) {
