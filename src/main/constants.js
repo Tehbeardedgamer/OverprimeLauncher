@@ -1,6 +1,6 @@
 const path = require("path");
 
-const filePath = require("../renderer/index.js");
+const filePath = "E:/<name>/Desktop/OverprimeLauncher-master/gmaes"; // require("../renderer/index.js");
 // The games installation dir
 const installationDir = filePath;
 
