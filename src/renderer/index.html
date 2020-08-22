@@ -1,88 +1,89 @@
 <!DOCTYPE html>
 <html class="html" lang="en">
 
-
 <head>
 
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/normalize.css">
-<link rel="stylesheet" href="styles/css.css">
-<meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pepeprime Launcher</title>
-<style>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/css.css">
+    <link rel="stylesheet" href="styles/widgets.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepeprime Launcher</title>
 
-</style>
 </head>
 
-<body class="body">
-<div class="wrapper">
-<div style="-webkit-app-region: drag" class='header'>
 
-<nav style="-webkit-app-region: no-drag" class="nav">
-<ul>
-<li  class="discord btn"><a>DISCORD</a></li>
-<li class="shop "><a>SHOP</a></li>
-<li class="learn btn"><a>LEARN</a></li>
-</ul>
+<div style="-webkit-app-region:drag" class="toolbar">
+    <button class='toolBtn' id="minimizeBtn" style="-webkit-app-region: no-drag" onclick='windowMinimize()'>-</button>
+    <button class='toolBtn' id="closeBtn" style="-webkit-app-region: no-drag" onclick='windowClose()'>X</button>
+</div>
+
+
+<nav class="nav">
+
+    <ul *{user-select:none}>
+        <li class=" discord btn"><a>DISCORD</a></li>
+        <li class="shop "><a>SHOP</a></li>
+        <li class=" learn btn"><a>LEARN</a></li>
+    </ul>
 </nav>
-<div class="toolbar">
-<button id="minimizeBtn" style="-webkit-app-region: no-drag" class="toolbarBtn"
-onclick='windowMinimize()'>-</button>
-<button id="closeBtn" style="-webkit-app-region: no-drag" class="toolbarBtn"
-onclick='windowClose()'>X</button>
-</div>
-</div>
-<div class='sidebar'>
-<div id='logoname'>PEPEPRIME</div>
 
-</div>
-<div class='main'>
-<div class="content">
-<div class="top"></div>
-<div class='scrollinginfo'>
-<div class="contentone">
 
-<div class="update-head"> <h1>** INFO **</h1>
-<h2> <a href="https://www.paypal.com/paypalme/tehbeardedgamer"
-class="paypalBtn"> SUPPORT | DONATE</a></h2></div>
-<p>Developed and Funded by <a target="_blank"
-href='https://twitch.tv/tehbeardedgamer' class="twitchBtn">Tehbeardedgamer.</a></p>
+<main style="-webkit-app-region:drag" class="main">
+    <div " class='sub-nav'></div>
+    
+    <div " *{user-select:none} class=" content"></div>
+
+    <div " class='sidebar'>
+        MIDDLEND
+    </div>
+
+</main>
 
 
 
-<style>
-table, th, td {
-
-border: 1px solid#f4f4f4;
-}
-</style>
-<table>
-
-<th>Days:37</th>
-<th>Hours:400++</th>
-<th>Cost:$500++</th>
-<tr>                       
-<th>Language</th>
-<th>Files</th>
-<th>Lines of Code</th></tr>
-
-</tr><th>JSON</th><th>33</th><th>28824</th>
-<tr>
-</tr><th>JavaScript</th><th>86</th><th>3556</th>
-<tr>
-</tr><th>CSS</th><th>13</th><th>1966</th>
-<tr>
-</tr><th>HTML</th><th>21</th><th>699</th>
-<tr>
-</tr><th>PUG</th><th>11</th><th>265</th>
-<tr>
-</tr> <th>MD</th><th>7</th><th>86</th>
-<tr>
-</tr><th>TOTAL</th><th>171</th><th>35396</th>
+<footer  style=" -webkit-app-region:drag"*{user-select:none} class=" footer">
 
 
+
+        <div style="-webkit-app-region: no-drag" class="custom-select" style="width: 200px;">
+            <select disabled>
+                <option value="no">REGION</option>
+                <option value="NA">NORTH AMERICA</option>
+                <option value="EU">EUROPE</option>
+                <option value="SEA">SE ASIA</option>
+            </select>
+        </div>
+
+
+
+        <div id="content-footer">
+            <button style="-webkit-app-region: no-drag" id='downloadBtn' onclick="">DOWNLOAD</button>
+        </div>
+
+
+
+
+        <div class='floor-footer'>
+            <div class="progress">
+                <b class="progress__bar">
+                    <span class="progress__text">
+                        Progress:<em>0%</em>
+                    </span>
+                </b>
+            </div>
+
+            <p id="ver">Version 1.0.15</p>
+        </div>
+
+
+
+
+
+        </footer>
 
 
 
@@ -90,24 +91,6 @@ border: 1px solid#f4f4f4;
 
 
 
-</table>
-<p>    
-<br><br>
-
-Tehbeardedgamer is not affiliated with SoulEve or Overprime. Any Support goes directly to Tehbeardedgamer to fund Development. </p>
-
-
-
-
-</div>
-<div class="contenttwo">
-<div class="update-head"> <h1>** UPDATES **</h1>
-<h2> Version 1.0.15</h2></div>
-
-<p>Renabled Download Capabilities.<br><br>
-Added support to allow users to select download and install location.<br><br>
-Added Donation link to help support development.<br><br>
-Built Self hosted server for App and FS Management.</p>
 
 
 
@@ -115,41 +98,19 @@ Built Self hosted server for App and FS Management.</p>
 
 
 
-</div>
-</div>
-<div class="bottom"></div>
-</div>
 
-</div>
-<div class=' footer'>
-<div class='region'>REGION
-<div class="custom-select" style="width: 200px;">
-<select disabled>
-<option value="no">Region</option>
-<option value="NA">North America</option>
-<option value="EU">Europe</option>
-<option value="SEA">SE Asia</option>
-</select>
-</div>
-</div>
-<div class='download'>
-<button id='downloadBtn' onclick=""></button>
 
-</div>
-<div class="progress">
-<b class="progress__bar">
-<span class="progress__text">
-Progress:<em>0%</em>
-</span>
-</b>
-</div>
-<div class='info'>Version 1.0.15</div>
-</div>
-</body>
 
-<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
-<script src='jquery.js'></script> 
-<script type="module" src='style.js'></script>
-<script type="module" src="index.js">/*  require('./index.js') */</script>
+
+
+
+
+
+
+
+        <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+        <script src='jquery.js'></script>
+        <script type="module" src='style.js'></script>
+        <script type="module" src="index.js">/*  require('./index.js') */</script>
 
 </html>

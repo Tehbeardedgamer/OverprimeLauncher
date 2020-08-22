@@ -1,5 +1,4 @@
 const { ipcRenderer } = require("electron");
-const { dialog } = require("electron").remote.dialog;
 const $ = require("jquery");
 
 const downloadBtn = document.getElementById("downloadBtn");
@@ -9,7 +8,7 @@ const minimizeBtn = document.getElementById("minimizeBtn");
 const $bar = $(".progress__bar");
 const $progress = $(".progress");
 const $text = $(".progress__text");
-let filePath = {};
+
 const buttonText = {
   DOWNLOADING: "DOWNLOADING",
   DOWNLOAD: "DOWNLOAD",
@@ -23,7 +22,6 @@ downloadBtn.addEventListener("click", function () {
       ipcRenderer.send("download-start");
       break;
     }
-
     case buttonText.INSTALL: {
       ipcRenderer.send("install");
       break;
@@ -92,27 +90,9 @@ ipcRenderer.on("install-complete", function (event) {
 });
 
 ipcRenderer.on("window-loaded", function (event, isInstalled) {
-  if (isInstalled) {
-    setButtonText(buttonText.PLAY);
-  } else {
-    setButtonText(buttonText.DOWNLOAD);
-
-    let options = { properties: ["openDirectory"] };
-
-    dialog.showOpenDialog(options).then((selectedDir) => {
-      selectedDir.canceled
-        ? alert(
-            "You fucking idiot. How are you supposed to download the files if you dont select a location?"
-          )
-        : (filePath = selectedDir.filePaths[0]);
-
-      //now it will pause here, then you can check what filePath got on console log.
-      debugger;
-    });
-  }
+  setButtonText(isInstalled ? buttonText.PLAY : buttonText.DOWNLOAD);
 });
-console.log(filePath);
-module.exports = filePath;
+
 // Add a specific class to your element that you want clickable, (just so we know what it is)
 // querySelector that specific class
 // Attach an event listener

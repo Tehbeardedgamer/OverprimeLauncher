@@ -10,7 +10,7 @@ const { checkIfInstalled, deleteTempDir } = require("./main/utils.js");
 const execFile = require("child_process").execFile;
 const fs = require("fs");
 const path = require("path");
-
+const os = require("os");
 const { send } = require("process");
 const { autoUpdater } = require("electron-updater");
 
@@ -26,9 +26,11 @@ function createWindow() {
     width: 1280,
     height: 800,
     frame: false,
+    movable: true,
 
     webPreferences: {
       nodeIntegration: true,
+      enableRemoteModule: true,
     },
   });
 

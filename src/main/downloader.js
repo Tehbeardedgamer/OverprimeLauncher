@@ -1,7 +1,7 @@
 const request = require("request");
 const fs = require("fs");
 const path = require("path");
-const os = require("os");
+
 const { tempDownloadDir } = require("./constants");
 const { resolve } = require("path");
 
@@ -51,13 +51,13 @@ class Downloader {
       "http://CDN.tehbeardedgamer.tv/OP_Compiled-33.bin",
     ];
   }
-  // this is a comment
+
   downloadFiles() {
     return new Promise((resolve) => {
       for (let i = 0; i < this.fileURLs.length; i++) {
         const filename = this.getFilenameFromUrl(this.fileURLs[i]);
         const finalPath = path.join(tempDownloadDir, filename);
-        console.log("file path", finalPath); //did it make the dir in local?
+        console.log("file path", finalPath);
         this.downloadFile(this.fileURLs[i], finalPath);
       }
       resolve();

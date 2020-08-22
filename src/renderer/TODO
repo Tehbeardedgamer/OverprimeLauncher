@@ -1,14 +1,13 @@
-// TO DO - In no particular order.
+//////////////////  TO-DO \\\\\\\\\\\\\\\\\
 
-1. add update functionality to the app. - hard
 
-2. add links to header that open new windows not constrained by app  window size. - medium  // DONE
-
-3. add data feeds to main content window. - medium 
-
-4. add additional css style for a more dynamic look. - medium 
-
-5. Redo FS and Download capabilities.  - FUTURE functionality
-
-6. look at better way to compress / decompress and install files for faster completion. - FUTURE functionality
-
+1. Refactor app code to reduce bload, and organize better
+2. Add Checksum, allow pausing and resume of downloads.
+3. Add Content to Main: (Disord announcements from OP) || Random Livestream from Twitch for OP Directory
+4.add effects to Download btn to indicate progress is being made or someting is happening  such as download or patching. 
+5. Remove  TempDir and update with User selected Directory
+6.Organize and seperate front-end and Back-end files
+7.
+8.
+9.
+10.
