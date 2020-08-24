@@ -1,3 +1,8 @@
+/* 
+____________________________
+'REGION SEL'-'REGION SEL'-'REGION SEL'-'REGION SEL'
+____________________________ 
+*/
 .custom-select {
   width: 225px;
   margin-left: 30px;
@@ -65,6 +70,11 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+/* 
+____________________________
+'PROGRESS-BAR'-'PROGRESS-BAR'-'PROGRESS-BAR'-'PROGRESS-BAR'
+____________________________ 
+*/
 .progress {
   bottom: 1%;
   position: absolute;
@@ -317,6 +327,12 @@
     background-position: 150% center, right center, left center;
   }
 }
+
+/* 
+____________________________
+'DOWNLOAD BTN'-'DOWNLOAD BTN'-'DOWNLOAD BTN'-'DOWNLOAD BTN'
+____________________________ 
+*/
 
 #downloadBtn {
   margin-bottom: 10px;

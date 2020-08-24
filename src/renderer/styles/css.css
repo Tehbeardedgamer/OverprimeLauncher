@@ -1,6 +1,7 @@
 * {
   user-select: none;
 }
+
 /* 
 ____________________________
 'HTLM'-'HTLM'-'HTLM'-'HTLM'
@@ -10,7 +11,7 @@ ____________________________
   font-family: Oswald;
   padding: 0;
   min-width: 1280px;
-  min-height: 800px;
+  min-height: 1010px;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -39,8 +40,6 @@ ____________________________
 .nav {
   font-size: 2em;
 }
-ul {
-}
 
 li {
   margin-top: 10px;
@@ -62,50 +61,78 @@ ____________________________
 ____________________________ 
 */
 .sub-nav {
-  display: flex;
+  color: #f4f4f4;
+  font-size: 1em;
+  display: flexbox;
+  position: relative;
+  height: 24px;
+}
+
+.twitchBtn,
+.paypalBtn {
+  width: 50%;
+  line-height: 24px;
   height: 24px;
   background-color: #242424;
 }
+.twitchBtn:hover,
+.paypalBtn:hover {
+  background-color: #f4f4f4;
+  color: #242424;
+}
+
 .main {
-  justify-content: center;
   display: inline-block;
-  background-image: url("../../img/main_bg.jpg");
   position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 1280px;
-  height: 510px;
+  max-height: 720px;
   font-family: Oswald;
   color: #242424;
 }
 .content {
+  color: #f4f4f4;
   right: 0px;
   left: 0px;
-  flex-direction: row-reverse;
   display: flex;
-  background-color: #454545a2;
-  margin-left: auto;
   position: absolute;
-
-  height: 510px;
+  height: 720px;
   width: 960px;
 }
+.c1-header {
+  margin-top: 1em;
+  height: 1%;
+  display: flexbox;
+  text-align: center;
+}
+.contentone {
+  width: 320px;
+  display: block;
+}
+p {
+  font-family: "Open Sans Condensed", sans-serif;
+  margin: 10px;
+  font-size: 1.25em;
+  font-weight: 100;
+  line-height: normal;
+}
+.biveo {
+  user-select: none;
+}
 .sidebar {
-  justify-content: center;
-  align-items: center;
+  background-color: #24242480;
+  color: #f4f4f4;
   position: absolute;
   display: flex;
-  flex-direction: row;
-  background-color: #454545a2;
-  margin-right: auto;
-  float: left;
-  height: 510px;
+  height: 720px;
   width: 320px;
-  background-repeat: no-repeat;
-  background-position: 20px;
-  background-image: url("../../img/Logo_1_smallest.png");
 }
 
+:any-link {
+  color: aquamarine;
+}
+:any-link:hover {
+  color: #f4f4f4;
+}
 /* 
 ____________________________
 'FOOT'-'FOOT'-'FOOT'-'FOOT'
@@ -140,6 +167,6 @@ ____________________________
   font-family: Oswald;
   color: #f4f4f4;
   margin-left: auto;
-  margin-bottom: 18px;
+  margin-bottom: 35px;
   float: right;
 }

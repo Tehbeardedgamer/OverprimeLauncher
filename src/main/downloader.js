@@ -2,17 +2,12 @@ const request = require("request");
 const fs = require("fs");
 const path = require("path");
 
-const { tempDownloadDir } = require("./constants");
 const { resolve } = require("path");
 
 class Downloader {
   constructor() {
     this.totalReceived = 0;
     this.totalSize = 1;
-
-    if (!fs.existsSync(tempDownloadDir)) {
-      fs.mkdirSync(tempDownloadDir, { recursive: true });
-    }
 
     this.fileURLs = [
       "http://CDN.tehbeardedgamer.tv/OP_Compiled.exe",
@@ -52,11 +47,11 @@ class Downloader {
     ];
   }
 
-  downloadFiles() {
+  downloadFiles(readFile) {
     return new Promise((resolve) => {
       for (let i = 0; i < this.fileURLs.length; i++) {
         const filename = this.getFilenameFromUrl(this.fileURLs[i]);
-        const finalPath = path.join(tempDownloadDir, filename);
+        const finalPath = path.join(readFile, filename);
         console.log("file path", finalPath);
         this.downloadFile(this.fileURLs[i], finalPath);
       }

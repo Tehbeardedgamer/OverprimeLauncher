@@ -1,116 +1,149 @@
 <!DOCTYPE html>
 <html class="html" lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/css.css" />
+    <link rel="stylesheet" href="styles/widgets.css" />
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIDDLEND</title>
+  </head>
 
-<head>
+  <div style="-webkit-app-region: drag;" class="toolbar">
+    <button
+      class="toolBtn"
+      id="minimizeBtn"
+      style="-webkit-app-region: no-drag;"
+      onclick="windowMinimize()"
+    >
+      -
+    </button>
+    <button
+      class="toolBtn"
+      id="closeBtn"
+      style="-webkit-app-region: no-drag;"
+      onclick="windowClose()"
+    >
+      X
+    </button>
+  </div>
 
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/css.css">
-    <link rel="stylesheet" href="styles/widgets.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pepeprime Launcher</title>
-
-</head>
-
-
-<div style="-webkit-app-region:drag" class="toolbar">
-    <button class='toolBtn' id="minimizeBtn" style="-webkit-app-region: no-drag" onclick='windowMinimize()'>-</button>
-    <button class='toolBtn' id="closeBtn" style="-webkit-app-region: no-drag" onclick='windowClose()'>X</button>
-</div>
-
-
-<nav class="nav">
-
-    <ul *{user-select:none}>
-        <li class=" discord btn"><a>DISCORD</a></li>
-        <li class="shop "><a>SHOP</a></li>
-        <li class=" learn btn"><a>LEARN</a></li>
+  <nav class="nav">
+    <ul>
+      <li class="discord btn"><a>DISCORD</a></li>
+      <li class="shop"><a>SHOP</a></li>
+      <li class="learn btn"><a>LEARN</a></li>
     </ul>
-</nav>
+  </nav>
 
+  <main style="-webkit-app-region: drag;" class="main">
+    <div class="sub-nav" style="-webkit-app-region: no-drag;">
+      <nav>
+        <ul>
+          <li class="twitchBtn"><a>TWITCH</a></li>
+          <li class="paypalBtn"><a>DONATE</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="sidebar" style="-webkit-app-region: no-drag;">
+      <div class="contentone">
+        <div class="c1-header">
+          <h1>** INFO **</h1>
+        </div>
 
-<main style="-webkit-app-region:drag" class="main">
-    <div " class='sub-nav'></div>
-    
-    <div " *{user-select:none} class=" content"></div>
+        <p>
+          ___________________________________
+          <br />
+          Tehbeardedgamer has no affiliation with OP. All Donations support my
+          work on this project.
+        </p>
+        <p>
+          ___________________________________
+          <br />
 
-    <div " class='sidebar'>
-        MIDDLEND
+          Client Version: 1.0.19
+          <br /><br />
+          Changelog:
+          <br />
+          - added auto update capabilities allowing me to update the client with
+          out any further downloads.<br />
+          - Reworked UI and Layout to better suit user needs and feedback.
+          <br />
+          - Added functionality to allow user to select initial download
+          location.<br />
+          - Reformatted all SC to reduce bloat and increase optimization and
+          organization.
+          <br />
+          - Created server to host files instead of using 3rd Party AWS / AZURE
+          due to cost of data transfer.
+          <br />
+          ___________________________________
+          <br /><br />
+          Please send all feedback or issues to: Tehbeardedgamer#0378
+        </p>
+      </div>
     </div>
 
-</main>
+    <div class="content"></div>
 
+    <video
+      autoplay
+      muted
+      loop
+      id=" myVideo"
+      <source
+      class="biveo"
+      src="../../src/img/Biveo.mp4"
+      type="video/mp4"
+    ></video>
+  </main>
 
+  <footer style="-webkit-app-region: drag;" class="footer">
+    <div
+      style="-webkit-app-region: no-drag;"
+      class="custom-select"
+      style="width: 200px;"
+    >
+      <select disabled>
+        <option value="no">REGION</option>
+        <option value="NA">NORTH AMERICA</option>
+        <option value="EU">EUROPE</option>
+        <option value="SEA">SE ASIA</option>
+      </select>
+    </div>
 
-<footer  style=" -webkit-app-region:drag"*{user-select:none} class=" footer">
+    <div id="content-footer">
+      <button style="-webkit-app-region: no-drag;" id="downloadBtn" onclick="">
+        INSTALL
+      </button>
+    </div>
 
+    <div class="floor-footer">
+      <div class="progress">
+        <b class="progress__bar">
+          <span class="progress__text"> Progress:<em>0%</em> </span>
+        </b>
+      </div>
 
-
-        <div style="-webkit-app-region: no-drag" class="custom-select" style="width: 200px;">
-            <select disabled>
-                <option value="no">REGION</option>
-                <option value="NA">NORTH AMERICA</option>
-                <option value="EU">EUROPE</option>
-                <option value="SEA">SE ASIA</option>
-            </select>
-        </div>
-
-
-
-        <div id="content-footer">
-            <button style="-webkit-app-region: no-drag" id='downloadBtn' onclick="">DOWNLOAD</button>
-        </div>
-
-
-
-
-        <div class='floor-footer'>
-            <div class="progress">
-                <b class="progress__bar">
-                    <span class="progress__text">
-                        Progress:<em>0%</em>
-                    </span>
-                </b>
-            </div>
-
-            <p id="ver">Version 1.0.15</p>
-        </div>
-
-
-
-
-
-        </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
-        <script src='jquery.js'></script>
-        <script type="module" src='style.js'></script>
-        <script type="module" src="index.js">/*  require('./index.js') */</script>
-
+      <p id="ver">Version 1.0.19</p>
+    </div>
+  </footer>
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+  <script src="jquery.js"></script>
+  <script type="module" src="style.js"></script>
+  <script type="module" src="index.js">
+    /*  require('./index.js') */
+  </script>
 </html>

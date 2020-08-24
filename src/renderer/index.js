@@ -1,45 +1,73 @@
+/*INTEGRATED DEFINED CONST */
 const { ipcRenderer } = require("electron");
-const $ = require("jquery");
 
+/* USER DEFINED CONST */
 const downloadBtn = document.getElementById("downloadBtn");
-const closeBtn = document.getElementById("closeBtn");
-const minimizeBtn = document.getElementById("minimizeBtn");
-
-const $bar = $(".progress__bar");
-const $progress = $(".progress");
-const $text = $(".progress__text");
-
 const buttonText = {
-  DOWNLOADING: "DOWNLOADING",
   DOWNLOAD: "DOWNLOAD",
+  DOWNLOADING: "DOWNLOADING",
   INSTALL: "INSTALL",
   PLAY: "PLAY",
 };
 
-downloadBtn.addEventListener("click", function () {
+/*END OF CONST - RENDERER CODE */
+
+downloadBtn.addEventListener("click", () => {
   switch (downloadBtn.textContent) {
     case buttonText.DOWNLOAD: {
-      ipcRenderer.send("download-start");
+      console.log("button Clicked");
+      ipcRenderer.send("iniDownload");
+      console.log("IPCSENT");
       break;
     }
     case buttonText.INSTALL: {
-      ipcRenderer.send("install");
+      ipcRenderer.send("iniInstall");
       break;
     }
     case buttonText.PLAY: {
-      ipcRenderer.send("play");
+      ipcRenderer.send("iniPlay");
       break;
     }
   }
 });
-
-closeBtn.addEventListener("click", () => {
-  ipcRenderer.send("window-close");
-});
-
 minimizeBtn.addEventListener("click", () => {
-  ipcRenderer.send("window-minimize");
+  ipcRenderer.send("window:minimize");
 });
+closeBtn.addEventListener("click", () => {
+  ipcRenderer.send("window:close");
+});
+
+ipcRenderer.on("install:check", (event, isInstalled) => {
+  console.log(buttonText);
+  console.log(isInstalled);
+  downloadBtn.textContent = isInstalled ? buttonText.PLAY : buttonText.DOWNLOAD;
+});
+
+ipcRenderer.on("download:started", (event) => {
+  setButtonText(buttonText.DOWNLOADING);
+  $progress.addClass("progress--active");
+});
+
+ipcRenderer.on("download-update", function (event, progress) {
+  updateProgress(progress);
+});
+
+ipcRenderer.on("download-finished", function (event) {
+  setButtonText(buttonText.INSTALL);
+  $progress.addClass("progress--complete");
+});
+
+ipcRenderer.on("install-complete", function (event) {
+  setButtonText(buttonText.PLAY);
+});
+
+/*
+PROGRESSBAR
+*/
+const $ = require("jquery");
+const $bar = $(".progress__bar");
+const $progress = $(".progress");
+const $text = $(".progress__text");
 
 const orange = 30;
 const yellow = 55;
@@ -69,37 +97,6 @@ const updateProgress = (percent) => {
   $bar.css({ width: percent + "%" });
 };
 
-window.addEventListener("load", () => ipcRenderer.send("window-loaded"));
-
-ipcRenderer.on("download-start", function (event) {
-  setButtonText(buttonText.DOWNLOADING);
-  $progress.addClass("progress--active");
-});
-
-ipcRenderer.on("download-update", function (event, progress) {
-  updateProgress(progress);
-});
-
-ipcRenderer.on("download-finished", function (event) {
-  setButtonText(buttonText.INSTALL);
-  $progress.addClass("progress--complete");
-});
-
-ipcRenderer.on("install-complete", function (event) {
-  setButtonText(buttonText.PLAY);
-});
-
-ipcRenderer.on("window-loaded", function (event, isInstalled) {
-  setButtonText(isInstalled ? buttonText.PLAY : buttonText.DOWNLOAD);
-});
-
-// Add a specific class to your element that you want clickable, (just so we know what it is)
-// querySelector that specific class
-// Attach an event listener
-// Make sure you have access to the event variable (add it to your arguments)
-// Prevent the default action
-// And pass a message over ipc to the main.js file,
-
 /**
  * attachLink(selector, link)
  * @param {string} selector The CSS Selector for the element to be clicked
@@ -126,5 +123,3 @@ attachLink(".learn", "http://www.overprime.net");
 //     ipcRenderer.send('openExternalLink', 'https://twitch.tv/tehbeardedgamer');
 //   });
 // });
-
-console.log("If there is something in the next line it is JQUERY", $);
