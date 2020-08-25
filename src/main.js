@@ -6,7 +6,11 @@ const { BrowserWindow, app, ipcMain } = require("electron");
 const { autoUpdater } = require("electron-updater");
 /*USER DEFINED CONST */
 require("./main/mainipc");
-const { checkForSettingFile, checkIsInstalled } = require("./main/utilities");
+const {
+  checkForSettingFile,
+  checkIsInstalled,
+  checkIsDownloaded,
+} = require("./main/utilities");
 
 let mainWindow;
 
@@ -34,8 +38,12 @@ app.whenReady().then(async () => {
   // Check if  app data / settings exist. Then set userpath to  path in settings
   autoUpdater.checkForUpdatesAndNotify();
   await createWindow();
-
-  mainWindow.webContents.send("install:check", checkIsInstalled());
+  const isDownloaded = checkIsDownloaded();
+  if (isDownloaded) {
+    mainWindow.webContents.send("install:check", checkIsInstalled());
+  } else {
+    mainWindow.webContents.send("download:check", isDownloaded);
+  }
 });
 
 app.on("window-all-closed", () => {

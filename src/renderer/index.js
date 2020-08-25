@@ -7,6 +7,7 @@ const buttonText = {
   DOWNLOAD: "DOWNLOAD",
   DOWNLOADING: "DOWNLOADING",
   INSTALL: "INSTALL",
+  INSTALLING: "INSTALLING",
   PLAY: "PLAY",
 };
 
@@ -36,16 +37,30 @@ minimizeBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
   ipcRenderer.send("window:close");
 });
-
+ipcRenderer.on("download:check", (event, isDownloaded) => {
+  console.log(buttonText);
+  console.log(isDownloaded);
+  downloadBtn.textContent = isDownloaded
+    ? buttonText.INSTALL
+    : buttonText.DOWNLOAD;
+});
 ipcRenderer.on("install:check", (event, isInstalled) => {
   console.log(buttonText);
   console.log(isInstalled);
-  downloadBtn.textContent = isInstalled ? buttonText.PLAY : buttonText.DOWNLOAD;
+  downloadBtn.textContent = isInstalled ? buttonText.PLAY : buttonText.INSTALL;
 });
 
 ipcRenderer.on("download:started", (event) => {
   setButtonText(buttonText.DOWNLOADING);
   $progress.addClass("progress--active");
+});
+
+ipcRenderer.on("install:started", (event) => {
+  setButtonText(buttonText.INSTALLING);
+  $progress.addClass("progress--active");
+});
+ipcRenderer.on("install-update", function (event, progress) {
+  updateProgress(progress);
 });
 
 ipcRenderer.on("download-update", function (event, progress) {

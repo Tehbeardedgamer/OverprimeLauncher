@@ -58,12 +58,13 @@ const getExeDir = () => {
 const getInstallExe = () => {
   const { gameDir } = readFile();
 
-  return path.join(gameDir, "\\OP_Compiled.exe");
+  return path.join(gameDir, "\\Overprime.7z");
 };
 
 const checkIsInstalled = () => fs.existsSync(getExeDir());
-
+const checkIsDownloaded = () => fs.existsSync(getInstallExe());
 module.exports = {
+  checkIsDownloaded,
   checkForSettingFile,
   checkIsInstalled,
   readFile,
