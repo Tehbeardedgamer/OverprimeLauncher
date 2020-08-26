@@ -23,6 +23,7 @@ downloadBtn.addEventListener("click", () => {
     }
     case buttonText.INSTALL: {
       ipcRenderer.send("iniInstall");
+      console.log("install button press was sent");
       break;
     }
     case buttonText.PLAY: {
@@ -57,6 +58,7 @@ ipcRenderer.on("download:started", (event) => {
 
 ipcRenderer.on("install:started", (event) => {
   setButtonText(buttonText.INSTALLING);
+  console.log("install was started");
   $progress.addClass("progress--active");
 });
 ipcRenderer.on("install-update", function (event, progress) {
@@ -120,6 +122,7 @@ const updateProgress = (percent) => {
 function attachLink(selector, link) {
   document.querySelector(selector).addEventListener("click", (event) => {
     event.preventDefault();
+    console.log("button clicked");
     ipcRenderer.send("openExternalLink", link);
   });
 }

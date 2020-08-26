@@ -1,21 +1,24 @@
 {
   "name": "overprimelauncher",
-  "version": "1.0.2",
+  "version": "2.1.3",
   "description": "Tehbeardegamer's Overprime Launcher",
   "main": "./src/main.js",
   "scripts": {
     "publish": "electron-builder  --win -p always",
     "start": "electron ./src/main.js -w",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "pack:no-asar": "electron-builder --asar=false --dir",
+    "dist": "electron-builder",
+    "dev": "env NODE_ENV=development yarn electron ./src/main.js"
   },
   "author": "Tehbeardedgamer",
-  "license": "GNU AGPLv3",
+  "license": "AGPL-3.0",
   "dependencies": {
     "7zip-bin": "^5.0.3",
     "decompress-zip": "^0.2.2",
     "electron-updater": "^4.3.4",
     "jquery": "^3.5.1",
+    "latest": "^0.2.0",
     "node-7z": "^2.1.1",
     "pkg": "^4.4.9"
   },
@@ -38,6 +41,7 @@
     "productName": "Overprime Launcher",
     "win": {
       "target": "NSIS"
-    }
+    },
+    "asar": false
   }
 }

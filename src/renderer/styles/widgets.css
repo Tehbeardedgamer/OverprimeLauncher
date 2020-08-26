@@ -6,8 +6,8 @@ ____________________________
 .custom-select {
   width: 225px;
   margin-left: 30px;
-  margin-top: 20px;
-  font-size: 20px;
+  margin-top: 40px;
+  font-size: 18px;
   position: absolute;
   font-family: Oswald;
 }
@@ -17,7 +17,7 @@ ____________________________
 }
 
 .select-selected {
-  background-color: #353535;
+  background-color: #24242480;
 }
 
 /*style the arrow inside the select element:*/
@@ -53,7 +53,7 @@ ____________________________
 /*style items (options):*/
 .select-items {
   position: relative;
-  background-color: #242424;
+  background-color: #24242480;
   top: 100%;
   left: 0;
   right: 0;
@@ -78,7 +78,7 @@ ____________________________
 .progress {
   bottom: 1%;
   position: absolute;
-  width: 70%;
+  width: 40%;
   grid-column: 2/4;
   margin-bottom: 20px;
   margin-right: 10px;
@@ -341,7 +341,7 @@ ____________________________
   width: 300px;
   height: 80px;
   grid-column: 1/2;
-  background-color: #353535;
+  background-color: #24242480;
   font-family: Oswald;
   color: #f5f5f5;
   font-size: 45px;

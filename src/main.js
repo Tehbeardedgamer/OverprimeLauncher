@@ -22,11 +22,12 @@ async function createWindow() {
     transparent: false,
     resizable: false,
     width: 1280,
-    height: 1010,
+    height: 720,
     frame: false,
     movable: true,
 
     webPreferences: {
+      worldSafeExecuteJavaScript: true,
       nodeIntegration: true,
       enableRemoteModule: true,
     },

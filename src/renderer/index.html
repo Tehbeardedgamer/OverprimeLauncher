@@ -21,44 +21,21 @@
     <title>MIDDLEND</title>
   </head>
 
-  <div style="-webkit-app-region: drag;" class="toolbar">
-    <button
-      class="toolBtn"
-      id="minimizeBtn"
-      style="-webkit-app-region: no-drag;"
-      onclick="windowMinimize()"
-    >
-      -
-    </button>
-    <button
-      class="toolBtn"
-      id="closeBtn"
-      style="-webkit-app-region: no-drag;"
-      onclick="windowClose()"
-    >
-      X
-    </button>
-  </div>
+  <main style="-webkit-app-region: no-drag" class="main">
+    <video
+      autoplay
+      muted
+      loop
+      id=" myVideo"
+      <source
+      class="biveo"
+      src="../../src/img/Biveo.mp4"
+      type="video/mp4"
+    ></video>
 
-  <nav class="nav">
-    <ul>
-      <li class="discord btn"><a>DISCORD</a></li>
-      <li class="shop"><a>SHOP</a></li>
-      <li class="learn btn"><a>LEARN</a></li>
-    </ul>
-  </nav>
-
-  <main style="-webkit-app-region: drag;" class="main">
-    <div class="sub-nav" style="-webkit-app-region: no-drag;">
-      <nav>
-        <ul>
-          <li class="twitchBtn"><a>TWITCH</a></li>
-          <li class="paypalBtn"><a>DONATE</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="sidebar" style="-webkit-app-region: no-drag;">
-      <div class="contentone">
+    <div class="sidebar" style="-webkit-app-region: no-drag">
+      <div style="-webkit-app-region: drag" class="contentone">
+        <div class="sub-nav" style="-webkit-app-region: no-drag"></div>
         <div class="c1-header">
           <h1>** INFO **</h1>
         </div>
@@ -73,7 +50,7 @@
           ___________________________________
           <br />
 
-          Client Version: 1.0.2
+          Client Version: 2.1.3
           <br /><br />
           Changelog:
           <br />
@@ -97,24 +74,39 @@
     </div>
 
     <div class="content"></div>
-
-    <video
-      autoplay
-      muted
-      loop
-      id=" myVideo"
-      <source
-      class="biveo"
-      src="../../src/img/Biveo.mp4"
-      type="video/mp4"
-    ></video>
   </main>
-
-  <footer style="-webkit-app-region: drag;" class="footer">
+  <nav class="nav" style="-webkit-app-region: no-drag">
+    <ul style="-webkit-app-region: no-drag">
+      <li class="twitchBtn"><a>TWITCH</a></li>
+      <li class="paypalBtn"><a>DONATE</a></li>
+      <li class="discord btn"><a>DISCORD</a></li>
+      <li class="shop"><a>SHOP</a></li>
+      <li class="learn btn"><a>LEARN</a></li>
+      <div class="toolContainer">
+        <button
+          class="toolBtn"
+          id="minimizeBtn"
+          style="-webkit-app-region: no-drag"
+          onclick="windowMinimize()"
+        >
+          -
+        </button>
+        <button
+          class="toolBtn"
+          id="closeBtn"
+          style="-webkit-app-region: no-drag"
+          onclick="windowClose()"
+        >
+          X
+        </button>
+      </div>
+    </ul>
+  </nav>
+  <footer style="-webkit-app-region: drag" class="footer">
     <div
-      style="-webkit-app-region: no-drag;"
+      style="-webkit-app-region: no-drag"
       class="custom-select"
-      style="width: 200px;"
+      style="width: 200px"
     >
       <select disabled>
         <option value="no">REGION</option>
@@ -125,7 +117,7 @@
     </div>
 
     <div id="content-footer">
-      <button style="-webkit-app-region: no-drag;" id="downloadBtn" onclick="">
+      <button style="-webkit-app-region: no-drag" id="downloadBtn" onclick="">
         INSTALL
       </button>
     </div>
@@ -137,9 +129,10 @@
         </b>
       </div>
 
-      <p id="ver">Version 1.0.2</p>
+      <p id="ver">Version 2.1.3</p>
     </div>
   </footer>
+
   <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
   <script src="jquery.js"></script>
   <script type="module" src="style.js"></script>

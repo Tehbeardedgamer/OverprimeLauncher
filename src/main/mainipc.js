@@ -1,7 +1,7 @@
+const path = require("path");
 const sevenBin = require("7zip-bin");
-
 const Seven = require("node-7z");
-const { electron, ipcMain } = require("electron");
+const { ipcMain } = require("electron");
 const fs = require("fs");
 const Downloader = require("./downloader");
 const {
@@ -29,12 +29,9 @@ ipcMain.on("iniDownload", (event) => {
 });
 
 ipcMain.on("iniInstall", function (event) {
-  console.log("the FUCKING INSTALL BUTTON WAS PRESSED");
   if (fs.existsSync(readFile().gameDir)) {
-    console.log(readFile().gameDir);
     const pathTo7zip = sevenBin.path7za;
 
-    // myStream is an Readable stream
     const myStream = Seven.extractFull(getInstallExe(), readFile().gameDir, {
       $progress: true,
       $bin: pathTo7zip,
@@ -42,12 +39,9 @@ ipcMain.on("iniInstall", function (event) {
 
     event.sender.send("install:started");
 
-    myStream.on("data", function (data) {
-      //? { status: 'extracted', file: 'extracted/file.txt" }
-    });
+    myStream.on("data", function (data) {});
 
     myStream.on("progress", function (progress) {
-      console.log(progress.percent);
       event.sender.send("install-update", progress.percent);
       if (progress.percent === 100) {
         event.sender.send("install-complete");

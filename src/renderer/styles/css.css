@@ -1,17 +1,14 @@
-* {
-  user-select: none;
-}
-
 /* 
 ____________________________
 'HTLM'-'HTLM'-'HTLM'-'HTLM'
 ____________________________ 
 */
 .html {
+  user-select: none;
   font-family: Oswald;
   padding: 0;
   min-width: 1280px;
-  min-height: 1010px;
+  min-height: 720px;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -22,37 +19,44 @@ ____________________________
 'HEAD'-'HEAD'-'HEAD'-'HEAD'
 ____________________________ 
 */
-
-.toolbar {
+.toolContainer {
+  position: absolute;
   display: flex;
-  align-content: flex-end;
-  justify-content: flex-end;
-  background-color: #242424;
+  margin-left: auto;
+  top: 0;
+  right: 0;
 }
 .toolBtn {
-  position: relative;
-  width: 1.5em;
-  height: 1.5em;
-  background-color: #242424 !important;
+  display: inline;
+  border: none;
+
+  background: none;
   color: #f4f4f4;
-  font-size: 1em;
+  font-size: 10px;
+}
+.toolBtn:hover {
+  background-color: #f400000d;
 }
 .nav {
+  color: #f4f4f4;
+  width: 900 px;
+  margin-left: 320px;
+  position: relative;
+
   font-size: 2em;
 }
 
 li {
-  margin-top: 10px;
   bottom: 0;
-  height: 70px;
-  line-height: 70px;
+  height: 55px;
+  line-height: 50px;
   text-align: center;
   margin: auto;
-  width: 33.3%;
+  width: 19%;
   float: left;
 }
 li:hover {
-  background-color: #242424;
+  background-color: #24242480;
   color: #f4f4f4;
 }
 /* 
@@ -60,36 +64,18 @@ ____________________________
 'BODY'-'BODY'-'BODY'-'BODY'
 ____________________________ 
 */
-.sub-nav {
-  color: #f4f4f4;
-  font-size: 1em;
-  display: flexbox;
-  position: relative;
-  height: 24px;
-}
-
-.twitchBtn,
-.paypalBtn {
-  width: 50%;
-  line-height: 24px;
-  height: 24px;
-  background-color: #242424;
-}
-.twitchBtn:hover,
-.paypalBtn:hover {
-  background-color: #f4f4f4;
-  color: #242424;
-}
 
 .main {
-  display: inline-block;
-  position: relative;
+  user-select: none;
+  position: fixed;
   width: 1280px;
   max-height: 720px;
   font-family: Oswald;
   color: #242424;
 }
 .content {
+  z-index: -1;
+  user-select: none;
   color: #f4f4f4;
   right: 0px;
   left: 0px;
@@ -105,6 +91,7 @@ ____________________________
   text-align: center;
 }
 .contentone {
+  user-select: none;
   width: 320px;
   display: block;
 }
@@ -116,6 +103,7 @@ p {
   line-height: normal;
 }
 .biveo {
+  position: fixed;
   user-select: none;
 }
 .sidebar {
@@ -139,11 +127,10 @@ ____________________________
 ____________________________ 
 */
 .footer {
+  margin-left: 25%;
+  top: 465px;
   padding: 0px;
-  margin-top: auto;
-  position: absolute;
-  bottom: 0%;
-  background-color: #242424;
+  position: relative;
   display: flex;
   width: 1280px;
   height: 196px;
@@ -156,10 +143,11 @@ ____________________________
 }
 
 .floor-footer {
-  width: 70%;
+  width: 40%;
+  margin-left: 30%;
   margin-bottom: 8px;
   align-self: flex-end;
-  margin-left: auto;
+
   margin-right: 20px;
 }
 #ver {
