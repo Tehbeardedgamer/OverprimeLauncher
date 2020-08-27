@@ -52,13 +52,13 @@ const getExeDir = () => {
 
   return path.join(
     gameDir,
-    "\\Overprime\\Overprime\\Binaries\\Win64\\Overprime-Win64-Shipping.exe"
+    "\\Overprime_Compiled\\Overprime\\Binaries\\Win64\\Overprime-Win64-Shipping.exe"
   );
 };
 const getInstallExe = () => {
   const { gameDir } = readFile();
 
-  return path.join(gameDir, "\\Overprime.7z");
+  return path.join(gameDir, "\\Overprime_Compiled.7z.001");
 };
 
 const checkIsInstalled = () => fs.existsSync(getExeDir());
