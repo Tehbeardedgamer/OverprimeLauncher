@@ -37,25 +37,32 @@ ____________________________
 .toolBtn:hover {
   background-color: #f400000d;
 }
-.nav {
+.nav {z-index: 1;
   color: #f4f4f4;
   width: 900 px;
   margin-left: 320px;
-  position: relative;
+  position: fixed;
+  display: flex;
 
   font-size: 2em;
 }
-
+ul{
+  
+width: 960px;
+}
 li {
+  
+  z-index: 1;
   bottom: 0;
   height: 55px;
   line-height: 50px;
   text-align: center;
   margin: auto;
-  width: 19%;
+  width: 20%;
   float: left;
 }
 li:hover {
+  border-bottom: 2px solid #f4f4f4;
   background-color: #24242480;
   color: #f4f4f4;
 }
@@ -66,7 +73,7 @@ ____________________________
 */
 
 .main {
-  user-select: none;
+  
   position: fixed;
   width: 1280px;
   max-height: 720px;
@@ -75,7 +82,7 @@ ____________________________
 }
 .content {
   z-index: -1;
-  user-select: none;
+  
   color: #f4f4f4;
   right: 0px;
   left: 0px;
@@ -88,10 +95,16 @@ ____________________________
   margin-top: 1em;
   height: 1%;
   display: flexbox;
+ 
+}
+h1{
   text-align: center;
 }
+
 .contentone {
-  user-select: none;
+  height: 720px;
+  /* overflow:auto; */
+  
   width: 320px;
   display: block;
 }
@@ -103,10 +116,12 @@ p {
   line-height: normal;
 }
 .biveo {
+  z-index: -99;
   position: fixed;
-  user-select: none;
+  
 }
 .sidebar {
+  overflow:auto;
   background-color: #24242480;
   color: #f4f4f4;
   position: absolute;
@@ -128,7 +143,7 @@ ____________________________
 */
 .footer {
   margin-left: 25%;
-  top: 465px;
+  top: 525px;
   padding: 0px;
   position: relative;
   display: flex;
@@ -148,13 +163,16 @@ ____________________________
   margin-bottom: 8px;
   align-self: flex-end;
 
-  margin-right: 20px;
+  
 }
 #ver {
-  display: inline-flex;
+  width: 100%;
+  align-self: flex-end;
+  display:flex;
   font-family: Oswald;
   color: #f4f4f4;
-  margin-left: auto;
+  margin-left: 93%;
   margin-bottom: 35px;
-  float: right;
+  
+ 
 }

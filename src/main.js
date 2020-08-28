@@ -18,7 +18,8 @@ let mainWindow;
 
 async function createWindow() {
   mainWindow = new BrowserWindow({
-    openDevTools: true,
+    
+    openDevTools: false,
     transparent: false,
     resizable: false,
     width: 1280,
@@ -27,7 +28,7 @@ async function createWindow() {
     movable: true,
 
     webPreferences: {
-      worldSafeExecuteJavaScript: true,
+       worldSafeExecuteJavaScript: true,
       nodeIntegration: true,
       enableRemoteModule: true,
     },

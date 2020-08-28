@@ -21,8 +21,9 @@
     <title>MIDDLEND</title>
   </head>
 
-  <main style="-webkit-app-region: no-drag" class="main">
+  <main style="-webkit-app-region:no-drag" class="main">
     <video
+    style="-webkit-app-region: drag"
       autoplay
       muted
       loop
@@ -34,49 +35,79 @@
     ></video>
 
     <div class="sidebar" style="-webkit-app-region: no-drag">
-      <div style="-webkit-app-region: drag" class="contentone">
-        <div class="sub-nav" style="-webkit-app-region: no-drag"></div>
-        <div class="c1-header">
-          <h1>** INFO **</h1>
+      <div style="-webkit-app-region: no-drag" class="contentone">
+          <div class="c1-header">
+          <h1>** INFO **
+            <br/><br/>
+            SCROLL DOWN
+          </h1>
+          <p>
+            ___________________________________
+            <br />
+            Tehbeardedgamer has no affiliation with OP. All Donations support my
+            work on this project.
+          </p>
+          <p>
+            ___________________________________
+            <br />
+  
+            Client Version: 2.3.0
+            <br /><br />
+            Changelog:
+            <br />
+            - Added auto update capabilities allowing me to update the client with
+            out any further downloads.<br />
+            - Reworked UI and Layout to better suit user needs and feedback.
+            <br />
+            - Added functionality to allow user to select initial download
+            location.<br />
+            - Reformatted all SC to reduce bloat and increase optimization and
+            organization.
+            <br />
+            - Created server to host files instead of using 3rd Party AWS / AZURE
+            due to cost of data transfer.
+            <br />
+            ___________________________________
+            <br /><br />
+            
+          </p>
+          <h1>** UPCOMING FEATURES **</h1>
+            
+          
+            <p>
+              ___________________________________
+              <br /><br />
+              - Downloading
+              __________________________________
+              <br />
+                 - Ability to Stop, Pause, Resume from any progress point.<br /><br />
+                - Adding Download Manifest and Checksum<br /><br />
+                -Creating Socket IO and Refactoring Download process to allow unpacking files while downloading.<br /><br />
+                -Realtime Patching of files with no additional downloads.<br /><br />
+                -Ability to change download directory or point to a installed location.<br /><br />
+                <br />
+              -UI/UX<br />
+              ___________________________________
+              <br />
+                -Real Time chat client to any other users currently online<br /><br />
+                -Twitch Stream embed for random streamer in OP Category<br />
+                
+
+              ___________________________________
+              <br /><br />
+              Please send all feedback or issues to: Tehbeardedgamer#0378
+            </p>
         </div>
 
-        <p>
-          ___________________________________
-          <br />
-          Tehbeardedgamer has no affiliation with OP. All Donations support my
-          work on this project.
-        </p>
-        <p>
-          ___________________________________
-          <br />
-
-          Client Version: 2.2.1
-          <br /><br />
-          Changelog:
-          <br />
-          - added auto update capabilities allowing me to update the client with
-          out any further downloads.<br />
-          - Reworked UI and Layout to better suit user needs and feedback.
-          <br />
-          - Added functionality to allow user to select initial download
-          location.<br />
-          - Reformatted all SC to reduce bloat and increase optimization and
-          organization.
-          <br />
-          - Created server to host files instead of using 3rd Party AWS / AZURE
-          due to cost of data transfer.
-          <br />
-          ___________________________________
-          <br /><br />
-          Please send all feedback or issues to: Tehbeardedgamer#0378
-        </p>
+        
       </div>
     </div>
-
-    <div class="content"></div>
+  
+  
+   
   </main>
-  <nav class="nav" style="-webkit-app-region: no-drag">
-    <ul style="-webkit-app-region: no-drag">
+  <nav class="nav" style="-webkit-app-region: drag">
+    <ul style="-webkit-app-region:no-drag">
       <li class="twitchBtn"><a>TWITCH</a></li>
       <li class="paypalBtn"><a>DONATE</a></li>
       <li class="discord btn"><a>DISCORD</a></li>
@@ -129,7 +160,7 @@
         </b>
       </div>
 
-      <p id="ver">Version 2.2.1</p>
+      <p id="ver">Version 2.3.0</p>
     </div>
   </footer>
 
